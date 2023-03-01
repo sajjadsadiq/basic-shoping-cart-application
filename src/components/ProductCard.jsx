@@ -5,8 +5,8 @@ import { addToCart, removeToCart } from "../redux/cart/actions";
 import { ADD_TO_CART } from "../redux/cart/actionTypes";
 
 const ProductCard = ({ product }) => {
-  const { image, model, price } = product;
-  const {pathName} = useLocation()
+  const { image, model, price, quantity } = product;
+  const { pathName } = useLocation();
 
   const dispatch = useDispatch();
 
@@ -23,12 +23,9 @@ const ProductCard = ({ product }) => {
       <img style={{ width: "100%", borderRadius: "10px" }} src={image} alt="" />
       <span>Price: {price}</span>
       <h4>{model}</h4>
-      <button onClick={() => dispatch(addToCart(product))}>
-        Add To Cart
-      </button>
-      <button onClick={() => dispatch(removeToCart(product))}>
-        Delete
-      </button>
+      <p>Q: {quantity}</p>
+      <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
+      <button onClick={() => dispatch(removeToCart(product))}>Delete</button>
     </div>
   );
 };
