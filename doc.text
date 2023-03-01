@@ -1,0 +1,5 @@
+Output - Data Load UI Show
+
+
+step 01: data load - useEffect(console.log data)
+step 02: Global store create PRODUCT_CONTEXT = createContext()
